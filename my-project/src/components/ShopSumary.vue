@@ -98,7 +98,6 @@
 
 <script>
 export default {
-  name: 'Button',
   props: {
     imageUrl: {
       type: String,
