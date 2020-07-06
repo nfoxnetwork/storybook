@@ -1,25 +1,25 @@
 <template>
-  <div class="Card">
+  <div class="ShopSumary">
     <div
       v-if="!! imageUrl"
-      class="Card__Image"
+      class="ShopSumary__Image"
       :style="{
         backgroundImage: `url( ${ imageUrl } )`,
       }"
     >
     </div>
-    <div class="Card__Body">
-      <div class="Card__Title">
+    <div class="ShopSumary__Body">
+      <div class="ShopSumary__Title">
         {{ title }}
       </div>
-      <div class="Card__Summary">
+      <div class="ShopSumary__Summary">
         {{ summary }}
       </div>
-      <div class="Card__Rating">
+      <div class="ShopSumary__Rating">
         <svg
           viewBox="0 0 128 128"
           v-for="i in Math.min( rating, 5 )"
-          :key="`star-colord-${i}`"
+          :key="`star-colored-${i}`"
         >
           <path
             d="m93.7 115c-.9 0-1.7-.2-2.5-.6l-27.2-14.3-27.2 14.3c-2.6 1.4-5.8.4-7.2-2.2-.5-1-.7-2.2-.5-3.4l5.2-30.3-22-21.5c-2.1-2.1-2.2-5.4-.1-7.5.8-.8 1.9-1.4 3.1-1.6l30.4-4.4 13.5-27.5c1.6-2.6 5-3.5 7.6-2 .8.5 1.5 1.2 2 2l13.6 27.5 30.4 4.4c2.9.4 4.9 3.1 4.5 6-.2 1.2-.7 2.2-1.6 3.1l-22 21.4 5.2 30.3c.5 2.9-1.5 5.7-4.4 6.2-.2.1-.5.1-.8.1z"
@@ -39,7 +39,7 @@
         ({{ reviews }})
       </div>
       <button
-        class="Card__PinButton"
+        class="ShopSumary__PinButton"
         type="button"
         @click="$emit( 'pin' )"
       >
@@ -63,9 +63,9 @@
         </svg>
       </button>
     </div>
-    <div class="Card__Footer">
+    <div class="ShopSumary__Footer">
       <button
-        class="Card__StarButton"
+        class="ShopSumary__StarButton"
         type="button"
         @click="$emit( 'star' )"
       >
@@ -78,7 +78,7 @@
         {{ stars }}
       </button>
       <button
-        class="Card__LikeButton"
+        class="ShopSumary__LikeButton"
         type="button"
         @click="$emit( 'like' )"
       >
@@ -97,44 +97,42 @@
 </template>
 
 <script>
-  export default {
-    name: 'Button',
-    props: {
-      imageUrl: {
-        type: String
-      },
-      title: {
-        type: String
-      },
-      summary: {
-        type: String
-      },
-      isLiked: {
-        type: Boolean,
-      },
-      stars: {
-        type: Number,
-      },
-      likes: {
-        type: Number,
-      },
-      isLiked: {
-        type: Boolean,
-      },
-      rating: {
-        type: Number,
-      },
-      reviews: {
-        type: Number,
-      },
+export default {
+  name: 'Button',
+  props: {
+    imageUrl: {
+      type: String,
     },
-    computed: {
-    }
-  }
+    title: {
+      type: String,
+    },
+    summary: {
+      type: String,
+    },
+    isLiked: {
+      type: Boolean,
+    },
+    stars: {
+      type: Number,
+    },
+    likes: {
+      type: Number,
+    },
+    isLiked: {
+      type: Boolean,
+    },
+    rating: {
+      type: Number,
+    },
+    reviews: {
+      type: Number,
+    },
+  },
+}
 </script>
 
 <style scoped>
-.Card {
+.ShopSumary {
   font-family: sans-serif;
   font-size: 16px;
   position: relative;
@@ -149,7 +147,7 @@
     0 3px 6px rgba( 0, 0, 0, 0.23 );
 }
 
-  .Card__Image {
+  .ShopSumary__Image {
     position: absolute;
     top: 0;
     left: 0;
@@ -160,28 +158,28 @@
     border-radius: 6px 0 0 6px;
   }
 
-  .Card__Body {
+  .ShopSumary__Body {
     position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 10px 30px 10px 10px;
   }
 
-  .Card__Image ~ .Card__Body {
+  .ShopSumary__Image ~ .ShopSumary__Body {
     width: calc( 100% - 150px );
     margin-left: 150px;
   }
 
-    .Card__Title {
+    .ShopSumary__Title {
       font-weight: bold;
       font-size: 18px;
     }
 
-    .Card__Summary {
+    .ShopSumary__Summary {
       margin-bottom: 4px;
     }
 
-    .Card__PinButton {
+    .ShopSumary__PinButton {
       cursor: pointer;
       position: absolute;
       top: 5px;
@@ -191,23 +189,23 @@
       background: transparent;
     }
 
-      .Card__PinButton svg {
+      .ShopSumary__PinButton svg {
         display: block;
         width: 20px;
         height: 20px;
       }
 
-    .Card__Rating {
+    .ShopSumary__Rating {
       display: flex;
     }
 
-      .Card__Rating svg {
+      .ShopSumary__Rating svg {
         display: block;
         width: 16px;
         height: 16px;
       }
 
-  .Card__Footer {
+  .ShopSumary__Footer {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -217,13 +215,13 @@
     padding: 10px;
   }
 
-  .Card__Image ~ .Card__Footer {
+  .ShopSumary__Image ~ .ShopSumary__Footer {
     width: calc( 100% - 150px );
     margin-left: 150px;
   }
 
-    .Card__StarButton,
-    .Card__LikeButton {
+    .ShopSumary__StarButton,
+    .ShopSumary__LikeButton {
       font-size: 16px;
       line-height: 1;
       cursor: pointer;
@@ -241,8 +239,8 @@
       background: transparent;
     }
 
-      .Card__StarButton svg,
-      .Card__LikeButton svg {
+      .ShopSumary__StarButton svg,
+      .ShopSumary__LikeButton svg {
         display: block;
         width: 16px;
         height: 16px;

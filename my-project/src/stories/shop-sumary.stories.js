@@ -1,4 +1,4 @@
-import Card from '../components/Card';
+import ShopSumary from '../components/ShopSumary';
 import {
   withKnobs,
   text,
@@ -7,14 +7,14 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Card',
-  component: Card,
+  title: 'ShopSumary',
+  component: ShopSumary,
   decorators: [withKnobs]
 };
 
 export const Default = () => ({
-  components: { Card },
-  template: `<Card
+  components: { ShopSumary },
+  template: `<ShopSumary
     :imageUrl="imageUrl"
     :title="title"
     :summary="summary"
