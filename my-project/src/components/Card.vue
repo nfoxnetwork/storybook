@@ -1,9 +1,10 @@
 <template>
   <div class="Card">
     <div
+      v-if="!! imageUrl"
       class="Card__Image"
       :style="{
-        backgroundImage: imageUrl ? `url( ${ imageUrl } )` : '',
+        backgroundImage: `url( ${ imageUrl } )`,
       }"
     >
     </div>
