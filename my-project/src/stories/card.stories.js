@@ -15,7 +15,7 @@ export default {
 export const Default = () => ({
   components: { Card },
   template: `<Card
-    imageUrl="https://via.placeholder.com/256"
+    :imageUrl="imageUrl"
     :title="title"
     :summary="summary"
     :isLiked="isLiked"
@@ -28,6 +28,9 @@ export const Default = () => ({
     @like="onLike"
   />`,
   props: {
+    imageUrl: {
+      default: text('imageUrl', 'https://picsum.photos/256')
+    },
     title: {
       default: text('title', 'タイトルテキスト')
     },

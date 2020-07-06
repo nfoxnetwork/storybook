@@ -20,7 +20,7 @@
       <my-button text="Large" size="large" />
     </div>
     <Card
-      imageUrl="https://via.placeholder.com/256"
+      imageUrl="https://picsum.photos/256"
       title="タイトルテキスト"
       summary="サマリーテキスト"
       :isLiked="false"

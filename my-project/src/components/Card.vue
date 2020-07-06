@@ -1,6 +1,11 @@
 <template>
   <div class="Card">
-    <div class="Card__Image">
+    <div
+      class="Card__Image"
+      :style="{
+        backgroundImage: imageUrl ? `url( ${ imageUrl } )` : '',
+      }"
+    >
     </div>
     <div class="Card__Body">
       <div class="Card__Title">
@@ -150,7 +155,7 @@
     bottom: 0;
     width: 150px;
     flex-shrink: 0;
-    background: #ccc;
+    background: #ccc 50% 50% / cover;
     border-radius: 6px 0 0 6px;
   }
 
