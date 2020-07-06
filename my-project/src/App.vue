@@ -19,7 +19,7 @@
       <my-button text="Normal" size="normal" />
       <my-button text="Large" size="large" />
     </div>
-    <ShopSumary
+    <ShopSummary
       imageUrl="https://picsum.photos/256"
       title="タイトルテキスト"
       summary="サマリーテキスト"
@@ -37,13 +37,13 @@
 
 <script>
 import MyButton from './components/Button'
-import ShopSumary from './components/ShopSumary'
+import ShopSummary from './components/ShopSummary'
 
 export default {
   name: 'App',
   components: {
     MyButton,
-    ShopSumary,
+    ShopSummary,
   }
 }
 </script>
