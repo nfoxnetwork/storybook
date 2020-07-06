@@ -14,7 +14,7 @@ export default {
 
 export const Default = () => ({
   components: { Card },
-  template: `<div>{{isLiked}}<Card
+  template: `<Card
     imageUrl="https://via.placeholder.com/256"
     :title="title"
     :summary="summary"
@@ -26,7 +26,7 @@ export const Default = () => ({
     @pin="onPin"
     @star="onStar"
     @like="onLike"
-  /></div>`,
+  />`,
   props: {
     title: {
       default: text('title', 'タイトルテキスト')
