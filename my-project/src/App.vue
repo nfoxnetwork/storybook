@@ -19,16 +19,31 @@
       <my-button text="Normal" size="normal" />
       <my-button text="Large" size="large" />
     </div>
+    <Card
+      imageUrl="https://via.placeholder.com/256"
+      title="タイトルテキスト"
+      summary="サマリーテキスト"
+      :isLiked="false"
+      :stars="12"
+      :likes="12"
+      :rating="4"
+      :reviews="123"
+      @pin="() => {}"
+      @star="() => {}"
+      @like="() => {}"
+    />
   </div>
 </template>
 
 <script>
 import MyButton from './components/Button'
+import Card from './components/Card'
 
 export default {
   name: 'App',
   components: {
-    MyButton
+    MyButton,
+    Card,
   }
 }
 </script>
